@@ -199,6 +199,8 @@ namespace GUIUtil
 
     QString formatNiceTimeOffset(qint64 secs);
 
+    void readCSS(QWidget* target,const QString& cssFile);
+
     class ClickableLabel : public QLabel
     {
         Q_OBJECT

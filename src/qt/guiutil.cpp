@@ -963,6 +963,14 @@ QString formatNiceTimeOffset(qint64 secs)
     return timeBehindText;
 }
 
+void readCSS(QWidget *target, const QString &cssFile){
+    QFile f(cssFile);
+    if(f.open(QIODevice::ReadOnly)){
+        target->setStyleSheet(QLatin1String(f.readAll()));
+        f.close();
+    }
+}
+
 void ClickableLabel::mouseReleaseEvent(QMouseEvent *event)
 {
     Q_EMIT clicked(event->pos());

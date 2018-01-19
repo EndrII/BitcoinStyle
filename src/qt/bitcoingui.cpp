@@ -156,6 +156,10 @@ BitcoinGUI::BitcoinGUI(const PlatformStyle *_platformStyle, const NetworkStyle *
 
     rpcConsole = new RPCConsole(_platformStyle, 0);
     helpMessageDialog = new HelpMessageDialog(this, false);
+
+    GUIUtil::readCSS(rpcConsole, ":/Style/CSS");
+    GUIUtil::readCSS(helpMessageDialog, ":/Style/CSS");
+
 #ifdef ENABLE_WALLET
     if(enableWallet)
     {
